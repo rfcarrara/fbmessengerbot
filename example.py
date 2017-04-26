@@ -16,8 +16,8 @@ def fb_webhook():
 		data = request.json
 
 		for entry in data['entry']:
-			recipient_id = data['entry']['messaging'][0]['sender']['id']
-			received_text = data['entry']['messaging'][0]['message']['text']
+			recipient_id = entry['messaging'][0]['sender']['id']
+			received_text = entry['messaging'][0]['message']['text']
 
 		if received_text == '/hnews':
 			message_params = {
